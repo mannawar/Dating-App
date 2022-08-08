@@ -29,6 +29,9 @@ export class ErrorInterceptor implements HttpInterceptor {
                   }
                 }
                 throw modalStateErrors.flat()
+              } else if (typeof(error) === 'object') {
+                console.log("Hi", error)
+                this.toastr.error(error.statusText === 'OK'? 'You have already liked this user' : error.statusText, error.status)
               }
               else {
                 this.toastr.error(error.statusText === 'OK'? 'Bad Request' : error.statusText, error.status)
