@@ -3,23 +3,8 @@ using Microsoft.AspNetCore.Identity;
 namespace API.Entities
 {
     public class AppUser: IdentityUser<int>
+    
     {
-        // public AppUser(int id, string userName, DateTime dateOfBirth, string knownAs, DateTime created, string gender, string introduction, string lookingFor, string interests, string city, string country) 
-        // {
-        //     this.Id = id;
-        //     this.UserName = userName;
-        //     this.DateOfBirth = dateOfBirth;
-        //     this.KnownAs = knownAs;
-        //     this.Created = created;
-        //     this.Gender = gender;
-        //     this.Introduction = introduction;
-        //     this.LookingFor = lookingFor;
-        //     this.Interests = interests;
-        //     this.City = city;
-        //     this.Country = country;
-   
-        // }
-
         public DateTime DateOfBirth { get; set; }
 
         public string KnownAs { get; set; }
@@ -49,6 +34,7 @@ namespace API.Entities
         public ICollection<Message> MessagesReceived { get; set; }
 
         public ICollection<AppUserRole> UserRoles {get; set;}
+        
 
     }
     
